@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<meta charset="ISO-8859-1">
+<title>Gestione Clienti</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" th:href="@{/css/EpicEnergyServices.css}"/>
+</head>
+<body>
+	<header>
+		<h1>Epic Energy Services</h1>
+		<h2>Elenco Clienti</h2>
+	
+	</header>
+	<div class="body2">
+	<table>
+
+		<thead>
+
+			<tr>
+
+				<th>Id</th>
+				<th>Ragione Sociale</th>
+				<th>Tipo cliente</th>
+				<th>Partita Iva</th>
+				<th>E-mail</th>
+				<th>Data di inserimento</th>
+				<th>Data ultimo contatto</th>
+				<th>Fatturato Annuale</th>
+				<th>pec</th>
+				<th>Telefono</th>
+				<th>E-mail contatto</th>
+				<th>Nome Contatto</th>	
+				<th>Cognome Contatto</th>
+				<th>Numero Contatto</th>
+				<th>Sede Legale</th>
+				<th>Sede Opertiva</th>
+				
+
+			</tr>
+
+		</thead>
+		<!-- th prende la collection e la cicla per tutti gli elementi, a runtime toglie i th: e mette i dati effettivi -->
+		<div th:each="c : ${clienti}">
+		<tbody>
+			<tr>
+
+				<td th:text="${c.id}"></td>
+				<td th:text="${c.ragioneSociale}"></td>
+				<td th:text="${c.tipoCliente}"></td>
+				<td th:text="${c.pIva}"></td>
+				<td th:text="${c.email}"></td>
+				<td th:text="${c.dataInserimento}"></td>
+				<td th:text="${c.dataUltimoContatto}"></td>
+				<td th:text="${c.fatturatoAnnuale}"></td>
+				<td th:text="${c.pec}"></td>
+				<td th:text="${c.telefono}"></td>
+				<td th:text="${c.emailContatto}"></td>
+				<td th:text="${c.nomeContatto}"></td>
+				<td th:text="${c.cognomeContatto}"></td>
+				<td th:text="${c.numeroContatto}"></td>
+				<td th:text="${c.visualizzaSedeLegale()}"></td>
+				<td th:text="${c.visualizzaSedeOperativa()}"></td>
+				<td><a th:href="@{/web/formaggiorna/{id}(id=${c.getId()})}">Aggiorna</a></td>
+				<td><a th:href="@{/web/eliminacliente/{id}(id=${c.getId()})}" onclick="return confirm('Sei sicuro di voler eliminare questo elemento?')">Elimina</a></td>
+
+			</tr>
+		</tbody>
+		</div>
+	</table>
+			<div class="ordina">
+			 <form>
+  <fieldset>
+    <legend>Clienti ordinati per:</legend>
+ 	<a href="/web/findallbyorderbyragionesociale">Ragione Sociale</a><br>
+ 	<a href="/web/findallbyorderbyfatturatoannuale">Fatturato annuale</a><br>
+ 	<a href="/web/findallbyorderbydatainserimento">Data inserimento</a><br>
+ 	<a href="/web/findallbyorderbydataultimocontatto">Ultimo contatto</a><br>
+  </fieldset>
+</form> 
+</div>
+<div class="bottoni2">
+	<form class="bottoneAggiungi inner" action="/web/formaggiungi">
+		<button type="submit" class="btn btn-outline-danger">Aggiungi Cliente</button>
+
+	</form>
+	
+		<form class="bottoneAggiungi inner" action="http://localhost:8080">
+		<button type="submit" class="btn btn-outline-danger">Torna alla home</button>
+
+	</form>
+	</div>
+	</div>
+	<footer>
+		<p>Created by Alessio Tabolacci per Epic Energy Services &copy;
+		2022</p>
+	</footer>
+
+</body>
+</html>

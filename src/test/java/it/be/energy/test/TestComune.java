@@ -1,0 +1,56 @@
+package it.be.energy.test;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import javax.transaction.Transactional;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.web.servlet.MockMvc;
+
+import it.be.energy.repository.ComuneRepository;
+import it.be.energy.service.ComuneService;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@Transactional
+public class TestComune {
+	
+	@Autowired
+	private MockMvc mockMvc;
+
+	@Mock
+	ComuneRepository comuneRepository;
+	
+	@Mock
+	ComuneService comuneService;
+	
+	
+	@Test
+	@WithMockUser
+	final void testFindAllComuni() throws Exception {
+		this.mockMvc.perform(get("http://localhost:8080/comune/trovatutti")).andDo(print()).andExpect(status().isOk());	
+	}
+	
+	@Test
+	@WithMockUser
+	final void testFindAllComuniById() throws Exception {
+		this.mockMvc.perform(get("http://localhost:8080/comune/trovaperid/5")).andDo(print()).andExpect(status().isOk());	
+	}
+	
+	@Test
+	@WithMockUser
+	final void testFindAllComuniByName() throws Exception {
+		this.mockMvc.perform(get("http://localhost:8080/comune/trovapernome/Rom")).andDo(print()).andExpect(status().isOk());	
+	}
+	
+	
+	
+
+} 

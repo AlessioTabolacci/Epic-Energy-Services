@@ -1,0 +1,149 @@
+body {
+	font: 14px Arial, sans-serif;
+	margin: 0px;
+	text-align: center !important;
+
+}
+
+.header {
+	padding: 10px 10px;
+	background: #acb3b9;
+}
+
+.header h1 {
+	font-size: 24px;
+}
+
+.section {
+	padding: 10px 10px;
+	background: #acb3b9;
+}
+
+.section h1 {
+	font-size: 18px;
+}
+
+.container {
+	width: 100%;
+	background: #ffffff;
+}
+
+.item {
+	float: left;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.item h2 {
+	font-size: 16px;
+}
+
+.item-numero {
+	width: 40%;
+	background: #d4d7dc;
+}
+
+.item-tavolo {
+	width: 40%;
+}
+
+.item-stato {
+	width: 20%;
+}
+
+footer {
+	background: #8B0000; color : white;
+	text-align: center;
+	padding: 15px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	
+}
+
+table {
+	border-collapse: collapse;
+	margin-top: 5px;
+	margin-left: auto !important;
+	margin-right:auto !important;
+}
+
+td, th {
+	border: 1px solid rgb(0, 0, 0);
+	padding: 8px;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+header {
+	padding: 10px;
+	text-align: center;
+	background: #8B0000; color : white;
+	font-size: 15px;
+	color: white;
+}
+
+thead {
+	font-weight: bold;
+}
+.homepage {
+	font-size: 30px;
+	text-align: center;
+	margin-top: 85px;	
+}
+.titolo {
+	font-size:15px;
+	text-align: center;
+	margin-top: 40px;
+}
+.spaziatura {
+	margin-left: 10px;
+}
+
+.bordo {
+	margin-left: 15px;
+}
+
+div.logo {
+	margin-top: 20px;
+	width: 10%; 
+	height: auto
+}
+
+.body2{
+	padding-top: 5px;
+	padding-bottom: 100px;
+	
+}
+
+.bottoneAggiungi{
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.visualizzazione {
+	margin-left: 15px;
+	text-align: center;
+}
+
+.bottoni2 {
+	text-align: center;
+	vertical-align: baseline;
+}
+
+.ordina {
+margin-top: 10px;
+margin-left:10px;
+	
+}
+
+.inner {
+    float: left;
+    position: relative;
+    left: 39%;
+    padding:7px;
+}
+
+
+	
