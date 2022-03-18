@@ -34,7 +34,7 @@ Questa applicazione è una demo di un software gestionale destinato ad aziende d
 
 Latest stable version: 1.0  
 
-## Princiali caratteristiche implementate
+## Principali caratteristiche implementate
 
 - Home page
 - Pagina di gestione clienti
